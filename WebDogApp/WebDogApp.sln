@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37411.7 d17.14
+VisualStudioVersion = 17.14.37502.11 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDogApp", "WebDogApp\WebDogApp.csproj", "{698E2C25-B594-496E-9E5A-0D952FE7FD87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDogApp", "WebDogApp\WebDogApp.csproj", "{84927C21-82AC-42F8-86EB-8DF588BB7B78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDogApp.Infrastructure", "WebDogApp.Infrastructure\WebDogApp.Infrastructure.csproj", "{2AA08BA1-1730-4EE4-B75E-9973FB6647C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDogApp.Infrastructure", "WebDogApp.Infrastructure\WebDogApp.Infrastructure.csproj", "{AC0F382B-F180-48D7-A2C6-3B4623204241}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDogApp.Core", "WebDogApp.Core\WebDogApp.Core.csproj", "{25ECD7D5-519A-4B5B-AE67-33087ADF877C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDogApp.Core", "WebDogApp.Core\WebDogApp.Core.csproj", "{1CADF499-E12C-46A7-9294-BD8973F4794D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{698E2C25-B594-496E-9E5A-0D952FE7FD87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{698E2C25-B594-496E-9E5A-0D952FE7FD87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{698E2C25-B594-496E-9E5A-0D952FE7FD87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{698E2C25-B594-496E-9E5A-0D952FE7FD87}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2AA08BA1-1730-4EE4-B75E-9973FB6647C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AA08BA1-1730-4EE4-B75E-9973FB6647C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AA08BA1-1730-4EE4-B75E-9973FB6647C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AA08BA1-1730-4EE4-B75E-9973FB6647C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25ECD7D5-519A-4B5B-AE67-33087ADF877C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25ECD7D5-519A-4B5B-AE67-33087ADF877C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25ECD7D5-519A-4B5B-AE67-33087ADF877C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25ECD7D5-519A-4B5B-AE67-33087ADF877C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84927C21-82AC-42F8-86EB-8DF588BB7B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84927C21-82AC-42F8-86EB-8DF588BB7B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84927C21-82AC-42F8-86EB-8DF588BB7B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84927C21-82AC-42F8-86EB-8DF588BB7B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0F382B-F180-48D7-A2C6-3B4623204241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0F382B-F180-48D7-A2C6-3B4623204241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0F382B-F180-48D7-A2C6-3B4623204241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0F382B-F180-48D7-A2C6-3B4623204241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CADF499-E12C-46A7-9294-BD8973F4794D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CADF499-E12C-46A7-9294-BD8973F4794D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CADF499-E12C-46A7-9294-BD8973F4794D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CADF499-E12C-46A7-9294-BD8973F4794D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4BD54369-423C-4FF6-B0BC-79A5B7B4AB5F}
+		SolutionGuid = {232F7719-1892-4CBF-83FF-489E8343A1D5}
 	EndGlobalSection
 EndGlobal

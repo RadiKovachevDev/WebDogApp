@@ -1,10 +1,14 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using WebDogApp.Core.Contracts;
+using WebDogApp.Core.Services;
 using WebDogApp.Infrastructure.Data;
+using WebDogApp.Infrastructure.Data.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebDogApp
 {
     public class Program
+
     {
         public static void Main(string[] args)
         {
@@ -12,10 +16,17 @@ namespace WebDogApp
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            //builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            //    options.UseSqlServer(connectionString));
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
+                options.UseLazyLoadingProxies().UseSqlServer(connectionString));
+
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+            //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddDefaultIdentity<IdentityUser>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
@@ -24,10 +35,17 @@ namespace WebDogApp
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequiredLength = 5;
+
             })
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            builder.Services.AddControllersWithViews();
+
+            builder.Services.AddTransient<IBreedService, BreedService>();
+
             var app = builder.Build();
+
+            app.PrepareDatabase();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
