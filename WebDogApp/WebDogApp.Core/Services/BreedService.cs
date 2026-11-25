@@ -29,6 +29,10 @@ namespace WebDogApp.Core.Services
             return breeds;
         }
 
+        public bool Create(string name) { _context.Breeds.Add(new Breed { Name=name }); return _context.SaveChanges()>0; }
+        public bool Update(int id,string name) { var breed=_context.Breeds.Find(id); if(breed==null)return false; breed.Name=name; return _context.SaveChanges()>0; }
+        public bool Delete(int id) { var breed=_context.Breeds.Find(id); if(breed==null || _context.Dogs.Any(d=>d.BreedId==id))return false; _context.Breeds.Remove(breed); return _context.SaveChanges()>0; }
+
         public List<Dog> GetDogsByBreed(int breedId)
         {
             return _context.Dogs

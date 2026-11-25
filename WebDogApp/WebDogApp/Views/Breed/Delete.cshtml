@@ -1,0 +1,2 @@
+@model WebDogApp.Models.Breed.BreedVM
+<h1>Изтриване на порода</h1><p>Сигурни ли сте, че искате да изтриете породата <strong>@Model.Name</strong>?</p><form asp-action="DeleteConfirmed"><input type="hidden" name="id" value="@Model.Id"/><button type="submit" class="btn btn-danger">Изтрий</button> <a asp-action="Index" class="btn btn-secondary">Отказ</a></form>

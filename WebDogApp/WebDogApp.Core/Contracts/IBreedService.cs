@@ -12,5 +12,8 @@ namespace WebDogApp.Core.Contracts
         Breed GetBreedById(int breedId);
 
         List<Dog> GetDogsByBreed(int breedId);
+        bool Create(string name);
+        bool Update(int id, string name);
+        bool Delete(int id);
     }
 }

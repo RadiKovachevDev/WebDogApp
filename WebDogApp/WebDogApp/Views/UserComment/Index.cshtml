@@ -1,0 +1,5 @@
+@model IEnumerable<WebDogApp.Models.UserComment.IndexVM>
+<h1>Потребителски коментари</h1>
+<p><a asp-action="Create" class="btn btn-primary">Добави коментар</a></p>
+@if(!Model.Any()){<p>Все още няма коментари.</p>}
+@foreach(var item in Model){<div class="card mb-3"><div class="card-body"><h5 class="card-title">@item.UserName</h5><p class="card-text">@item.Comment</p></div></div>}

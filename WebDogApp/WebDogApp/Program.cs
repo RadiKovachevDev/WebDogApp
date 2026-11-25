@@ -1,4 +1,4 @@
-using WebDogApp.Core.Contracts;
+﻿using WebDogApp.Core.Contracts;
 using WebDogApp.Core.Services;
 using WebDogApp.Infrastructure.Data;
 using WebDogApp.Infrastructure.Data.Infrastructure;
@@ -43,6 +43,7 @@ namespace WebDogApp
 
             builder.Services.AddTransient<IBreedService, BreedService>();
             builder.Services.AddTransient<IDogService, DogService>();
+            builder.Services.AddTransient<IUserCommentService, UserCommentService>();
 
             var app = builder.Build();
 

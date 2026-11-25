@@ -24,6 +24,9 @@ namespace WebDogApp.Infrastructure.Data.Domain
 
         public string Picture { get; set; } = null!;
 
+        [Required]
+        public string Description { get; set; } = null!;
+
         
     }
 }

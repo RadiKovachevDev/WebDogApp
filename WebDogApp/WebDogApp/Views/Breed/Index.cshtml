@@ -1,0 +1,2 @@
+@model IEnumerable<WebDogApp.Models.Breed.BreedVM>
+<h1>Породи</h1><p><a asp-action="Create" class="btn btn-primary">Добави порода</a></p>@if(TempData["BreedError"]!=null){<p class="text-danger">@TempData["BreedError"]</p>}<table class="table"><thead><tr><th>Порода</th><th>Действия</th></tr></thead><tbody>@foreach(var b in Model){<tr><td>@b.Name</td><td><a asp-action="Edit" asp-route-id="@b.Id">Редактирай</a> | <a asp-action="Delete" asp-route-id="@b.Id">Изтрий</a></td></tr>}</tbody></table>

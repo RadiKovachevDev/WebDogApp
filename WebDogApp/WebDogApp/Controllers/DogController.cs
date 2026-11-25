@@ -32,6 +32,7 @@ namespace WebDogApp.Controllers
                     Age = item.Age,
                     BreedName = item.Breed.Name,
                     Picture = item.Picture,
+                Description = item.Description,
                 }).ToList();
 
             return this.View(dogs);
@@ -53,6 +54,7 @@ namespace WebDogApp.Controllers
                 Age = item.Age,
                 BreedName = item.Breed.Name,
                 Picture = item.Picture,
+                Description = item.Description,
             };
 
             return View(dog);
@@ -79,14 +81,15 @@ namespace WebDogApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var createdId = _dogService.Create(dog.Name, dog.Age, dog.BreedId, dog.Picture);
+                var createdId = _dogService.Create(dog.Name, dog.Age, dog.BreedId, dog.Picture ?? string.Empty, dog.Description);
                 if (createdId)
                 {
                     return RedirectToAction(nameof(Index));
                 }
             }
 
-            return View();
+            dog.Breeds = _breedService.GetBreeds().Select(c => new BreedPairViewModel { Id = c.Id, Name = c.Name }).ToList();
+            return View(dog);
         }
 
         // GET: DogController/Edit/5
@@ -104,7 +107,8 @@ namespace WebDogApp.Controllers
                 Name = item.Name,
                 BreedId = item.BreedId,
                 Age = item.Age,
-                Picture = item.Picture
+                Picture = item.Picture,
+                Description = item.Description
             };
 
             dog.Breeds = _breedService.GetBreeds()
@@ -124,13 +128,14 @@ namespace WebDogApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var updated = _dogService.UpdateDog(id, bindingModel.Name, bindingModel.Age, bindingModel.BreedId, bindingModel.Picture);
+                var updated = _dogService.UpdateDog(id, bindingModel.Name, bindingModel.Age, bindingModel.BreedId, bindingModel.Picture, bindingModel.Description);
                 if (updated)
                 {
                     return this.RedirectToAction("Index");
                 }
             }
 
+            bindingModel.Breeds = _breedService.GetBreeds().Select(c => new BreedPairViewModel { Id = c.Id, Name = c.Name }).ToList();
             return View(bindingModel);
         }
 
@@ -151,7 +156,8 @@ namespace WebDogApp.Controllers
                 Name = item.Name,
                 Age = item.Age,
                 BreedName = item.Breed.Name,
-                Picture = item.Picture
+                Picture = item.Picture,
+                Description = item.Description
             };
 
             return View(dog);

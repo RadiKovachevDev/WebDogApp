@@ -15,5 +15,7 @@ namespace WebDogApp.Infrastructure.Data
 
         public DbSet<Breed> Breeds { get; set; }
 
+        public DbSet<UserComment> UserComments { get; set; }
+
     }
 }

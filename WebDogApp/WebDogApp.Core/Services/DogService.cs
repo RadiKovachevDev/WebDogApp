@@ -19,7 +19,7 @@ namespace WebDogApp.Core.Services
             _context = context;
         }
 
-        public bool Create(string name, int age, int breedId, string picture)
+        public bool Create(string name, int age, int breedId, string picture, string description)
         {
             Dog item = new Dog
             {
@@ -27,6 +27,7 @@ namespace WebDogApp.Core.Services
                 Age = age,
                 Breed = _context.Breeds.Find(breedId),
                 Picture = picture,
+                Description = description,
             };
 
             _context.Dogs.Add(item);
@@ -73,7 +74,7 @@ namespace WebDogApp.Core.Services
             return _context.SaveChanges() != 0;
         }
 
-        public bool UpdateDog(int dogId, string name, int age, int breedId, string picture)
+        public bool UpdateDog(int dogId, string name, int age, int breedId, string picture, string description)
         {
             var dog = GetDogById(dogId);
             if (dog == default(Dog))
@@ -84,6 +85,7 @@ namespace WebDogApp.Core.Services
             dog.Age = age;
             dog.Breed = _context.Breeds.Find(breedId);
             dog.Picture = picture;
+            dog.Description = description;
 
             _context.Update(dog);
             return _context.SaveChanges() != 0;
